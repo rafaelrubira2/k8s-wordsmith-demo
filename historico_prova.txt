@@ -1,0 +1,78 @@
+    1  ls -la
+    2  exit
+    3  python3
+    4  sudo apt-get install apt-transport-https ca-certificates gnupg -y
+    5  echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+    6  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+    7  sudo apt update -y
+    8  sudo apt install kubectl google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin -y
+    9  sudo usermod -aG docker $USER
+   10  echo $USER
+   11  sudo usermod -aG docker $USER
+   12  exit
+   13  sudo usermod -aG docker $USER
+   14  export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+   15  echo 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' >> ~/.bashrc
+   16  gcloud init
+   17  gcloud projects list
+   18  exit
+   19  gcloud projects list
+   20  export PROJECT_ID=prova-teste-rafael
+   21  echo "export PROJECT_ID=\"$PROJECT_ID\"" >> ~/.bashrc
+   22  gcloud services enable container.googleapis.com --project ${PROJECT_ID}
+   23  gcloud init
+   24  gcloud container clusters create demo-cluster --num-nodes=7
+   25  git config --global user.name rafaelrubira2
+   26  git config --global user.email rafaelrubira2@gmail.com
+   27  git config --global core.autocrlf false
+   28  git config --global core.filemode false
+   29  git config --global color.ui true
+   30  https://github.com/rafaelrubira2/k8s-wordsmith-demo.git
+   31  git clone https://github.com/rafaelrubira2/k8s-wordsmith-demo.git
+   32  ls
+   33  cd k8s-wordsmith-demo/
+   34  ls -la
+   35  branch
+   36  git branch
+   37  docker image ls
+   38  gcloud auth configure-docker
+   39  sudo usermod -aG docker $US
+   40  sudo usermod -aG docker $USER
+   41  docker ps
+   42  sudo apt update
+   43  sudo apt install kubectl google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin google-cloud-sdk-gke-gcloud-auth-plugin
+   44  curl https://releases.rancher.com/install-docker/20.10.sh | sh
+   45  sudo usermod -aG docker $USER
+   46  exit
+   47  ls
+   48  cd k8s-wordsmith-demo/
+   49  ls
+   50  cd db
+   51  ls
+   52  cat Dockerfile
+   53  docker build . -t gcr.io/$PROJECT_ID/app-flask:1.0.0
+   54  docker image ls
+   55  docker delete gcr.io/prova-teste-rafael/app-flask
+   56  docker image delete gcr.io/prova-teste-rafael/app-flask
+   57  docker image rm gcr.io/prova-teste-rafael/app-flask
+   58  docker image rm gcr.io/prova-teste-rafael/app-flask:1.0.0
+   59  docker build . -t gcr.io/$PROJECT_ID/db:1.0.0
+   60  cd ..
+   61  ls
+   62  docker build ./words -t gcr.io/$PROJECT_ID/words:1.0.0
+   63  docker build ./web -t gcr.io/$PROJECT_ID/web:1.0.0
+   64  docker image ls
+   65  docker push gcr.io/prova-teste-rafael/web
+   66  docker push gcr.io/prova-teste-rafael/web:1.0.0
+   67  docker push gcr.io/prova-teste-rafael/words:1.0.0
+   68  docker push gcr.io/prova-teste-rafael/db:1.0.0
+   69  ls -la
+   70  vim kube-deployment.yml 
+   71  kubectl get pods
+   72  docker image ls
+   73  kubectl apply -f kube-deployment.yml 
+   74  kubectl get pods
+   75  kubectl get all
+   76  git status
+   77  kubectl get all
+   78  history >> historico_prova.txt

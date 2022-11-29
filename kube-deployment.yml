@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: dockersamples/k8s-wordsmith-db
+        image: gcr.io/prova-teste-rafael/db:1.0.0
         ports:
         - containerPort: 5432
           name: db
@@ -68,7 +68,7 @@ spec:
     spec:
       containers:
       - name: words
-        image: dockersamples/k8s-wordsmith-api
+        image: gcr.io/prova-teste-rafael/words:1.0.0
         ports:
         - containerPort: 8080
           name: api
@@ -105,7 +105,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: dockersamples/k8s-wordsmith-web
+        image: gcr.io/prova-teste-rafael/web:1.0.0
         ports:
         - containerPort: 80
           name: words-web
